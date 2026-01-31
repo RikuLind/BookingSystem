@@ -31,12 +31,17 @@ async function onSubmit(event) {
   const actionValue = submitter && submitter.value ? submitter.value : "create";
   const payload = {
     action: actionValue,
-    resourceName: $("resourceName")?.value ?? "",
-    resourceDescription: $("resourceDescription")?.value ?? "",
-    resourceAvailable: $("resourceAvailable")?.value ?? "",
+    resourceName: ($("resourceName")?.value ?? "").trim(),
+    resourceDescription: ($("resourceDescription")?.value ?? "").trim(),
+    resourceAvailable: $("resourceAvailable")?.checked ?? false,
     resourcePrice: $("resourcePrice")?.value ?? "",
-    resourcePriceUnit: $("resourcePriceUnit")?.value ?? ""
+    resourcePriceUnit: ($("resourcePriceUnit")?.value ?? "").trim()
   };
+
+  if (!payload.resourceName || !payload.resourceDescription || !payload.resourcePriceUnit) {
+    alert("Please fill in all required fields correctly before submitting.");
+    return;
+  }
 
   logSection("Sending payload to httpbin.org/post", payload);
 
@@ -65,5 +70,6 @@ async function onSubmit(event) {
 
   } catch (err) {
     console.error("POST error:", err);
+    alert("Failed to create resource, please try again.");
   }
 }

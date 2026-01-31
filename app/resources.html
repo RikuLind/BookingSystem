@@ -124,10 +124,7 @@
                                 <label for="resourceDescription" class="block text-sm font-semibold">
                                     Resource description
                                 </label>
-                                <textarea id="resourceDescription" name="resourceDescription" rows="5"
-                                    placeholder="Describe location, capacity, included equipment, or any usage notes…"
-                                    class="mt-2 w-full rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm outline-none
-                         focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/30 transition-all duration-200 ease-out"></textarea>
+                                <div id="resourceDescriptionContainer"></div>
                                 <p class="mt-2 text-xs text-black/50">
                                     Keep it practical: what it is, and who it’s for (10–50 characters). Use letters,
                                     numbers, and spaces only.
@@ -191,22 +188,22 @@
                                     <!-- Price unit (Radio buttons) -->
                                     <div class="mt-4 flex flex-wrap gap-4">
                                         <label class="inline-flex items-center gap-2 cursor-pointer">
-                                            <input type="radio" name="resourcePriceUnit" value="hour" checked>
+                                            <input type="radio" id="resourcePriceUnit" name="resourcePriceUnit" value="hour" checked>
                                             <span class="text-sm">hour</span>
                                         </label>
 
                                         <label class="inline-flex items-center gap-2 cursor-pointer">
-                                            <input type="radio" name="resourcePriceUnit" value="day">
+                                            <input type="radio" id="resourcePriceUnit" name="resourcePriceUnit" value="day">
                                             <span class="text-sm">day</span>
                                         </label>
 
                                         <label class="inline-flex items-center gap-2 cursor-pointer">
-                                            <input type="radio" name="resourcePriceUnit" value="week">
+                                            <input type="radio" id="resourcePriceUnit" name="resourcePriceUnit" value="week">
                                             <span class="text-sm">week</span>
                                         </label>
 
                                         <label class="inline-flex items-center gap-2 cursor-pointer">
-                                            <input type="radio" name="resourcePriceUnit" value="month">
+                                            <input type="radio" id="resourcePriceUnit" name="resourcePriceUnit" value="month">
                                             <span class="text-sm">month</span>
                                         </label>
                                     </div>
